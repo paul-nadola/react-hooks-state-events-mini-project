@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories ={CATEGORIES} />
-      <NewTaskForm categories ={CATEGORIES} />
+      <NewTaskForm categories ={CATEGORIES} tasks={TASKS}/>
       <TaskList tasks={TASKS}/>
     </div>
   );
