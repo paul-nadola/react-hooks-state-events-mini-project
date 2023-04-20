@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Task() {
-  return (
+function Task(props) {
+  const [visible, setVisible] = useState(true);
+  const handleClick = () =>{
+    setVisible(false)
+  }
+  return ( 
+    visible &&
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div className="label">{props.category}</div>
+      <div className="text">{props.text}</div>
+      <button className="delete" onClick={handleClick}>X</button>
     </div>
   );
 }
