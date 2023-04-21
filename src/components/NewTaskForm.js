@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-const textInput = document.getElementById("text")
-const categoryInput = document.getElementById("category")
+// const textInput = document.getElementById("text")
+// const categoryInput = document.getElementById("category")
 
 function NewTaskForm({categories, tasks}) {
   const[text, setText] =useState('')
@@ -23,11 +23,12 @@ function NewTaskForm({categories, tasks}) {
     e.preventDefault()
     
     const newTask = {
-      text: textInput.value,
-      category: categoryInput.value
+      text: e.target.text.value,
+      category: e.target.category.value
     };
     console.log(newTask)
-    setNewTasks([...tasks, newTask]);
+    const newTasks =  [...tasks, newTask]
+    setNewTasks(newTasks);
     
     setText('')
     setCategory(categories[0])
